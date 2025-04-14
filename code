@@ -1,0 +1,2457 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from tkinter import *
+from tkinter import filedialog, messagebox
+from tkinter import ttk
+from PIL import Image  
+from PIL import ImageTk
+import tkinter as tk
+#import mysql.connector
+import sys
+import json
+import shutil
+from datetime import datetime
+#from mysql.connector import Error
+from openpyxl import load_workbook
+from openpyxl.drawing.image import Image as ExcelImage
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
+from openpyxl import load_workbook
+from openpyxl.drawing.image import Image  
+import os  
+from tkinter import messagebox
+from PIL import Image  
+from openpyxl.drawing.image import Image as OpenpyxlImage  
+import matplotlib.pyplot as plt
+from openpyxl import load_workbook
+from openpyxl.drawing.image import Image
+from io import BytesIO
+from openpyxl.chart import ScatterChart, Series, Reference
+import xlsxwriter
+import matplotlib.pyplot as plt
+from openpyxl import Workbook
+from openpyxl.drawing.image import Image
+import pandas as pd
+from pptx import Presentation
+from pptx.util import Pt  
+from pptx.util import Inches, Pt
+import os
+import win32com.client as win32
+from tkinter import messagebox
+import time
+import win32com.client as win32
+from win32com.client import constants 
+import time
+import pyperclip
+from tkinter import messagebox
+from pptx.util import Inches
+
+
+class Bosch:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Bosch")
+        self.root.geometry("1550x800+0+0")
+
+        self.df = pd.DataFrame({
+            'X Variable': [],
+            'Y Variable': [],
+            'Z Variable': []
+        })
+        
+        """con = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='Swiggy@1998',
+            auth_plugin='mysql_native_password'
+        )
+        if con.is_connected():
+            print("Connection established")"""
+        import os
+        import sys
+        from PIL import Image
+
+        if getattr(sys, 'frozen', False):
+            base_path = sys._MEIPASS
+        else:
+            base_path = os.path.dirname(os.path.abspath(__file__))
+
+        image00_path = os.path.join(base_path, "image00.jpg")
+        if not os.path.exists(image00_path):
+            print(f"Error: Image file not found! Expected at {image00_path}")
+        else:
+            print("image00.jpg found successfully!")       
+
+        from openpyxl import Workbook
+        from openpyxl.drawing.image import Image as OpenpyxlImage
+        from PIL import Image  
+
+        workbook = Workbook()
+        worksheet = workbook.active  
+        worksheet.title = "My Sheet"
+
+        import os
+        import sys
+        from PIL import Image
+
+        if getattr(sys, 'frozen', False):
+            base_path = sys._MEIPASS
+        else:
+            base_path = os.path.dirname(os.path.abspath(__file__))
+        image00_path = os.path.join(base_path, "image00.jpg")
+        if not os.path.exists(image00_path):
+            print(f"Error: Image file not found! Expected at {image00_path}")
+        else:
+            print("image00.jpg found successfully!")
+        from openpyxl import Workbook
+        from openpyxl.drawing.image import Image as OpenpyxlImage
+
+        workbook = Workbook()
+        worksheet = workbook.active
+        worksheet.title = "My Sheet"
+        worksheet.add_image(OpenpyxlImage(image00_path), "A1")
+        workbook.save(os.path.join(base_path, "output.xlsx"))
+
+        img1 = Image.open(image00_path).resize((1550, 140), Image.Resampling.LANCZOS)
+        self.photoimg1 = ImageTk.PhotoImage(img1)
+        Label(self.root, image=self.photoimg1, bd=4, relief=RIDGE).place(x=0, y=0, width=1550, height=140)
+
+        worksheet.add_image(OpenpyxlImage(image00_path), "A1")
+
+
+        output_path = os.path.join(base_path, "output.xlsx")
+        workbook.save(output_path)
+
+        output_dir = os.path.dirname(output_path)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        workbook.save(output_path)
+
+        import os
+        import sys
+        from PIL import Image
+        if getattr(sys, 'frozen', False):
+            base_path = sys._MEIPASS 
+        else:
+            base_path = os.path.dirname(os.path.abspath(__file__))
+
+        image_path = os.path.join(base_path, "image00.jpg")
+
+        if not os.path.exists(image_path):
+            print(f"Error: Image file not found! Expected at {image_path}")
+        else:
+            img1 = Image.open(image_path)
+
+
+        self.photoimg1 = ImageTk.PhotoImage(img1)
+        Label(self.root, image=self.photoimg1, bd=4, relief=RIDGE).place(x=0, y=0, width=1550, height=140)
+
+        image_path_sidebar = os.path.join(base_path, "image01.jfif")
+        if os.path.exists(image_path_sidebar):
+            img2 = Image.open(image_path_sidebar).resize((230, 140), Image.Resampling.LANCZOS)
+            self.photoimg2 = ImageTk.PhotoImage(img2)
+            Label(self.root, image=self.photoimg2, bd=0, relief=RIDGE).place(x=0, y=0, width=230, height=140)
+        else:
+            print(f"Error: Image file not found! Expected at {image_path_sidebar}")
+
+        main_frame = Frame(self.root, bd=0, relief=RIDGE)
+        main_frame.place(x=-235, y=140, width=2000, height=1200)       
+      
+        import os
+        from PIL import Image
+        base_path = os.path.dirname(os.path.abspath(__file__))
+        image_path = os.path.join(base_path, "image00.jpg")
+        if os.path.exists(image_path):
+            img = Image.open(image_path)
+        else:
+            print(f"Error: Image file not found! Expected at {image_path}")
+
+
+        self.additional_buttons_frame = Frame(bg="black")
+
+        self.sub_frame = Frame(main_frame, bd=4, relief=RIDGE, bg="snow")
+        self.sub_frame.place(x=235, y=5, width=2000, height=650)
+
+        axis_frame = Frame(self.sub_frame, bd=2, relief=RIDGE, bg="snow")
+        axis_frame.grid(row=0, column=0, columnspan=9, pady=1)
+
+        self.add_btn = Button(axis_frame, text="Add ↩", font=("Arial", 11, "bold"), bg="snow", fg="black", bd=2, relief=RIDGE, command=self.add_button)
+        self.add_btn.grid(row=0, column=2, padx=1, pady=1)
+
+        self.del_btn = Button(axis_frame, text="Delete", font=("Arial", 11, "bold"), bg="snow", fg="black", bd=2, relief=RIDGE, command=self.delete_button)
+        self.del_btn.grid(row=0, column=3, padx=1, pady=1)
+
+        self.load_btn = Button(axis_frame, text="Browse", width=8, font=("times new roman",11, "bold"), bg="snow", fg="black", bd=2, relief=RIDGE, command=self.upload_prompt)
+        self.load_btn.grid(row=0, column=0, padx=1, pady=1)
+
+        self.plot_btn = Button(axis_frame, text="Plot", width=8, font=("times new roman",11, "bold"), bg="snow", fg="black", bd=2, relief=RIDGE, command=self.plot_scatter)
+        self.plot_btn.grid(row=0, column=1, padx=1, pady=1)
+
+        self.block_btn = Button(axis_frame, text="Block", font=("Arial", 11, "bold"), bg="snow", fg="black", bd=2, relief=RIDGE,command=self.open_block_frame)
+        self.block_btn.grid(row=0, column=4, padx=1, pady=1)
+
+        self.exportppt_btn = Button(axis_frame, text="Export to PPT", font=("Arial", 11, "bold"), bg="snow", fg="black",bd=2, relief=RIDGE, command=self.open_export_ppt_frame)
+        self.exportppt_btn.grid(row=0, column=5, padx=1, pady=1)
+
+        self.import_btn = Button(axis_frame, text="Import", font=("Arial", 11, "bold"), bg="snow", fg="black",bd=2,command=self.import_rows, relief=RIDGE)
+        self.import_btn.grid(row=0, column=6, padx=1, pady=1)
+
+        self.rowsave_btn = Button(axis_frame, text="Row Save", font=("Arial", 11, "bold"), bg="snow", fg="black",bd=2,command=self.save_rows, relief=RIDGE)
+        self.rowsave_btn.grid(row=0, column=7, padx=1, pady=1)
+
+    def open_block_frame(self):
+        if hasattr(self, 'block_frame') and self.block_frame.winfo_exists():
+            self.block_frame.destroy()
+        self.block_frame = Frame(self.root, bd=4, relief=RIDGE, bg="aliceblue")
+        self.block_frame.place(x=500, y=200, width=550, height=300)
+
+        self.save = Button(
+            self.block_frame,
+            text="Save",
+            font=("Arial", 12, "bold"),
+            bg="lightsteelblue",
+            fg="black",
+            bd=2,
+            relief=RIDGE,
+            command=self.minimize_block_frame
+        )
+        self.save.place(x=10, y=140, width=60, height=40)
+
+        self.save=Button(
+           self.block_frame,
+           text = "Close",
+           font=("Arial", 12, "bold"),
+           bg="lightsteelblue",
+           fg="black",
+           bd=2,
+           relief=RIDGE
+        )
+
+        self.select_var_label = Label(
+            self.block_frame,
+            text="Select split criteria:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        )
+        self.select_var_label.place(x=10, y=10)
+
+        self.block1_label = Label(
+            self.block_frame,
+            text="BlockID 1:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        )
+        self.block1_label.place(x=10, y=70)
+        self.block1_entry = Entry(self.block_frame, font=("Arial", 12), bg="aliceblue", fg="black")
+        self.block1_entry.place(x=100, y=70, width=150)
+
+        self.block2_label = Label(
+            self.block_frame,
+            text="BlockID 2:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        )
+        self.block2_label.place(x=10, y=95)
+        self.block2_entry = Entry(self.block_frame, font=("Arial", 12), bg="aliceblue", fg="black")
+        self.block2_entry.place(x=100, y=95, width=150)
+
+        self.block3_label = Label(
+            self.block_frame,
+            text="BlockID 3:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        )
+        self.block3_label.place(x=10, y=120)
+        self.block3_entry = Entry(self.block_frame, font=("Arial", 12), bg="aliceblue", fg="black")
+        self.block3_entry.place(x=100, y=120, width=150)
+
+        self.show_variable_dropdown()
+
+
+    def show_variable_dropdown(self):
+        if self.df is None or self.df.empty:
+            messagebox.showerror("Error", "No Excel file uploaded!")
+            return
+        column_options = list(self.df.columns)
+        self.block_var = StringVar()
+        self.block_var.set("Select column")  
+
+        self.column_dropdown = ttk.Combobox(
+            self.block_frame,
+            textvariable=self.block_var,
+            values=column_options, 
+            state="readonly",
+            width=25
+        )
+        self.column_dropdown.place(x=170, y=10)
+        self.column_dropdown.bind("<<ComboboxSelected>>", self.update_values_dropdown)
+
+        self.value_var = StringVar()
+        self.value_var.set("Select value") 
+        self.value_dropdown = ttk.Combobox(
+            self.block_frame,
+            textvariable=self.value_var,
+            values=[], 
+            state="readonly",
+            width=25
+        )
+        self.value_dropdown.place(x=360, y=10) 
+
+
+    def update_values_dropdown(self, event):
+        selected_column = self.block_var.get().strip() 
+        if selected_column and selected_column in self.df.columns:
+            unique_values = list(self.df[selected_column].dropna().unique())
+            
+            preferred_order = ["Target VVT", "Reference VVT"]
+            unique_values = sorted(unique_values, key=lambda x: (preferred_order.index(x) if x in preferred_order else len(preferred_order), x))
+
+            self.value_dropdown['values'] = unique_values
+            self.value_var.set("Select value")
+
+            self.block1_entry.delete(0, END)
+            self.block1_entry.insert(0, unique_values[0] if len(unique_values) > 0 else "")
+
+            self.block2_entry.delete(0, END)
+            self.block2_entry.insert(0, unique_values[1] if len(unique_values) > 1 else "")
+
+            self.block3_entry.delete(0, END)
+            self.block3_entry.insert(0, unique_values[2] if len(unique_values) > 2 else "")
+            
+            self.block_data = {}
+
+
+
+    def filter_combobox(self, event, combobox, options):
+        value = event.widget.get().lower()
+        filtered_options = [option for option in options if value in option.lower()]
+        combobox['values'] = filtered_options
+
+
+    def minimize_block_frame(self):
+        self.block_data = {
+            "selected_column": self.block_var.get().strip(), 
+            "BlockID 1": self.block1_entry.get().strip(),
+            "BlockID 2": self.block2_entry.get().strip(),
+            "BlockID 3": self.block3_entry.get().strip()
+        }
+
+
+        print("BlockID data saved successfully:", self.block_data)
+
+        if hasattr(self, 'block_frame') and self.block_frame.winfo_exists():
+            self.block_frame.destroy()
+
+        messagebox.showinfo("Success", "BlockID data has been saved successfully!")
+        self.plot_scatter()
+
+
+    def get_block_ranges(self):
+
+        block_ranges = {}
+        if hasattr(self, 'block_data'):
+            for block_key, value in self.block_data.items():
+                if value and value != "-":  
+                    rows = self.df[self.df["BlockID"].astype(str)
+                                .str.strip()
+                                .str.lower() == value.lower()].index.tolist()
+                    print(f"Rows for value '{value}' in BlockID column:", rows)
+                    if rows:
+                        block_ranges[block_key] = (min(rows) + 1, max(rows) + 1)
+        print("Computed block ranges:", block_ranges)
+        return block_ranges
+
+
+
+    def update_chart_colors(self, chart, start_col, tab_name):
+        block_ranges = self.get_block_ranges()
+        colors = {
+            "BlockID 1": "#002060",  
+            "BlockID 2": "#A80163", 
+            "BlockID 3": "#008000"   
+        }
+        if block_ranges:
+            for block_key, (start_row, end_row) in block_ranges.items():
+                color = colors.get(block_key, "#000000")
+                print(f"Adding series for {block_key} from row {start_row} to {end_row} with color {color}")
+                chart.add_series({
+                    'categories': [tab_name, start_row, start_col, end_row, start_col],
+                    'values': [tab_name, start_row, start_col + 1, end_row, start_col + 1],
+                    'marker': {
+                        'type': 'circle',
+                        'size': 5,
+                        'fill': {'color': color},
+                        'border': {'none': True}
+                    },
+                    'name': block_key
+                })
+        else:
+            chart.add_series({
+                'categories': [tab_name, 1, start_col, len(self.df), start_col],
+                'values': [tab_name, 1, start_col + 1, len(self.df), start_col + 1],
+                'marker': {
+                    'type': 'circle',
+                    'size': 5,
+                    'fill': {'color': '#002060'},
+                    'border': {'none': True}
+                },
+                'name': ''
+            })
+  
+
+    import os
+    import shutil
+    from pptx import Presentation
+    from pptx.util import Pt
+    from tkinter import Toplevel, Frame, Label, Entry, Button, Scrollbar, Canvas, messagebox
+    import win32com.client as win32  
+
+    def open_export_ppt_frame(self):
+
+        if hasattr(self, 'export_ppt_window') and self.export_ppt_window.winfo_exists():
+            self.export_ppt_window.destroy()
+
+        self.export_ppt_window = Toplevel(self.root)
+        self.export_ppt_window.title("Export to PPT")
+        self.export_ppt_window.geometry("1100x350+400+200")
+        self.export_ppt_window.configure(bg="aliceblue")
+
+        Label(
+            self.export_ppt_window,
+            text="Main Heading:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        ).place(x=10, y=30)
+        self.main_heading_entry = Entry(self.export_ppt_window, font=("Arial", 12), fg="gray")
+        self.main_heading_entry.place(x=125, y=30, width=300, height=25)
+        self.main_heading_entry.insert(0, "Enter main heading...")
+        self.main_heading_entry.bind(
+            "<FocusIn>",
+            lambda event: self.clear_placeholder(self.main_heading_entry, "Enter main heading...")
+        )
+        self.main_heading_entry.bind(
+            "<FocusOut>",
+            lambda event: self.restore_placeholder(self.main_heading_entry, "Enter main heading...")
+        )
+
+        Label(
+            self.export_ppt_window,
+            text="Sub Heading:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        ).place(x=10, y=70)
+
+        self.add_button = Button(
+            self.export_ppt_window,
+            text="Add",
+            font=("Arial", 11, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.add_sub_heading_field,
+            padx=1,
+            pady=1
+        )
+        self.add_button.place(x=120, y=72, width=50, height=20)
+
+        self.dynamic_canvas = Canvas(self.export_ppt_window, bg="aliceblue", bd=0, highlightthickness=0)
+        self.dynamic_canvas.place(x=10, y=110, width=1050, height=180)
+
+        self.dynamic_scrollbar = Scrollbar(self.export_ppt_window, orient="vertical", command=self.dynamic_canvas.yview)
+        self.dynamic_scrollbar.place(x=1060, y=110, width=20, height=180)
+        self.dynamic_canvas.configure(yscrollcommand=self.dynamic_scrollbar.set)
+
+        self.sub_heading_container = Frame(self.dynamic_canvas, bg="aliceblue")
+        self.dynamic_canvas.create_window((0, 0), window=self.sub_heading_container, anchor="nw", width=1050)
+        self.sub_heading_container.bind(
+            "<Configure>",
+            lambda e: self.dynamic_canvas.configure(scrollregion=self.dynamic_canvas.bbox("all"))
+        )
+
+        self.sub_heading_entries = []  
+        self.next_entry_y = 0 
+
+        Button(
+            self.export_ppt_window,
+            text="Save",
+            font=("Arial", 12, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.save_to_ppt
+        ).place(x=180, y=72, width=50, height=20)
+        Button(
+            self.export_ppt_window,
+            text="Save as",
+            font=("Arial", 12, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.open_save_as_frame  
+        ).place(x=240, y=72, width=62, height=20)
+        Button(
+            self.export_ppt_window,
+            text="Close",
+            font=("Arial", 12, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.export_ppt_window.destroy
+        ).place(x=312, y=72, width=50, height=20)
+
+        Button(
+            self.export_ppt_window,
+            text="Row Save2",
+            font=("Arial", 12, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.save_rows2,
+        ).place(x=369, y=72, width=88, height=20)
+        Button(
+            self.export_ppt_window,
+            text="Import2",
+            font=("Arial", 12, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.import_rows2,
+        ).place(x=464, y=72, width=70, height=20)
+
+    import json
+    import tkinter as tk
+    from tkinter import filedialog
+
+    def save_rows2(self):
+
+        saved_data = []
+        for row in self.sub_heading_entries:
+
+            row_data = {
+                "Sub Heading": row[0].get(),
+                "Map Names": [row[1].get(), row[2].get()],
+                "Tab Name": row[3].get(),
+                "Quality Criteria": row[4].get(),
+                "Formula": row[5].get() if len(row) > 5 else ""
+            }
+            saved_data.append(row_data)
+        
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        if not file_path:
+            return
+        with open(file_path, "w") as f:
+            json.dump(saved_data, f, indent=4)
+        tk.messagebox.showinfo("Success", "Rows saved successfully!")
+
+    def import_rows2(self):
+
+        file_path = filedialog.askopenfilename(
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        if not file_path:
+            return
+        with open(file_path, "r") as f:
+            saved_data = json.load(f)
+        
+        for widget in self.sub_heading_container.winfo_children():
+            widget.destroy()
+        self.sub_heading_entries = []  
+        
+        for row_data in saved_data:
+
+            self.add_sub_heading_field()
+            current_entry = self.sub_heading_entries[-1]
+            
+            current_entry[0].delete(0, tk.END)
+            current_entry[0].insert(0, row_data.get("Sub Heading", ""))
+            
+            map_names = row_data.get("Map Names", ["", ""])
+            current_entry[1].delete(0, tk.END)
+            current_entry[1].insert(0, map_names[0])
+            current_entry[2].delete(0, tk.END)
+            current_entry[2].insert(0, map_names[1])
+            
+            current_entry[3].delete(0, tk.END)
+            current_entry[3].insert(0, row_data.get("Tab Name", ""))
+            
+            current_entry[4].delete(0, tk.END)
+            current_entry[4].insert(0, row_data.get("Quality Criteria", ""))
+            
+            if len(current_entry) > 5:
+                current_entry[5].delete(0, tk.END)
+                current_entry[5].insert(0, row_data.get("Formula", ""))
+        
+        
+
+
+
+    from tkinter import filedialog, Toplevel, Label, Entry, Button, END, messagebox
+    import os
+    import shutil
+    import win32com.client as win32
+
+    def open_save_as_frame(self):
+        self.save_as_window = Toplevel(self.export_ppt_window)
+        self.save_as_window.title("Save As")
+        self.save_as_window.geometry("400x200+450+250")
+        self.save_as_window.configure(bg="aliceblue")
+        
+        Label(
+            self.save_as_window,
+            text="File Name:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        ).place(x=10, y=20)
+        
+        self.file_name_entry = Entry(self.save_as_window, font=("Arial", 12), fg="gray")
+        self.file_name_entry.place(x=150, y=20, width=200, height=25)
+        self.file_name_entry.insert(0, "Enter file name...")
+        self.file_name_entry.bind(
+            "<FocusIn>",
+            lambda event: self.clear_placeholder(self.file_name_entry, "Enter file name...")
+        )
+        self.file_name_entry.bind(
+            "<FocusOut>",
+            lambda event: self.restore_placeholder(self.file_name_entry, "Enter file name...")
+        )
+        
+        Label(
+            self.save_as_window,
+            text="File Location:",
+            font=("Arial", 12, "bold"),
+            bg="aliceblue",
+            fg="black"
+        ).place(x=10, y=60)
+        
+        self.file_location_entry = Entry(self.save_as_window, font=("Arial", 12), fg="gray")
+        self.file_location_entry.place(x=150, y=60, width=200, height=25)
+        self.file_location_entry.insert(0, "Click to choose location...")
+        self.file_location_entry.bind("<Button-1>", self.browse_file_location)
+        
+        Button(
+            self.save_as_window,
+            text="OK",
+            font=("Arial", 12, "bold"),
+            bg="snow",
+            fg="black",
+            bd=2,
+            relief="ridge",
+            command=self.handle_save_as
+        ).place(x=150, y=110, width=80, height=30)
+
+    def browse_file_location(self, event):
+        selected_dir = filedialog.askdirectory(title="Select Folder")
+        if selected_dir:
+            self.file_location_entry.delete(0, END)
+            self.file_location_entry.insert(0, selected_dir)
+
+    def handle_save_as(self):
+
+        file_name = self.file_name_entry.get().strip()
+        file_location = self.file_location_entry.get().strip()
+        
+        if not file_name or file_name == "Enter file name...":
+            messagebox.showerror("Error", "Please enter a valid file name.")
+            return
+        
+        if not file_location or file_location == "Click to choose location...":
+            messagebox.showerror("Error", "Please select a file location.")
+            return
+        
+        # Ensure the file name has the proper extension.
+        if not file_name.lower().endswith(".pptx"):
+            file_name += ".pptx"
+            
+        new_file_path = os.path.join(file_location, file_name)
+        
+        try:
+            # Copy the updated presentation to the new location.
+            if hasattr(self, 'ppt_path') and os.path.exists(self.ppt_path):
+                shutil.copy2(self.ppt_path, new_file_path)
+                messagebox.showinfo("Success", f"Presentation saved as:\n{new_file_path}")
+            else:
+                messagebox.showerror("Error", "The original presentation file was not found.")
+                return
+            
+            if hasattr(self, 'original_slide_count'):
+                ppt_app = win32.Dispatch("PowerPoint.Application")
+                ppt_app.Visible = True
+                pres = ppt_app.Presentations.Open(self.ppt_path)
+                # Remove extra slides until only the original slides remain.
+                while pres.Slides.Count > self.original_slide_count:
+                    pres.Slides(pres.Slides.Count).Delete()
+                pres.Save()
+                pres.Close()
+                ppt_app.Quit()
+            else:
+                messagebox.showwarning("Warning", "Original slide count not recorded. Template was not reverted.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to save file or revert template:\n{str(e)}")
+        
+        # Close the Save As window.
+        self.save_as_window.destroy()
+
+
+    def add_sub_heading_field(self):
+        print("Add button clicked")
+        placeholders = ["Enter Sub Heading...", "Map name2", "Map name3", "Tab name", "Quality", "Formula"]
+        x_positions = [15, 315, 475, 630, 785, 930]
+        widths = [300, 150, 150, 150, 150, 150]
+
+        entries = []
+        for i, placeholder in enumerate(placeholders):
+            entry = Entry(self.sub_heading_container, font=("Arial", 12), fg="gray")
+            entry.place(x=x_positions[i], y=self.next_entry_y, width=widths[i], height=25)
+            entry.insert(0, placeholder)
+            entry.bind("<FocusIn>", lambda event, e=entry, p=placeholder: self.clear_placeholder(e, p))
+            entry.bind("<FocusOut>", lambda event, e=entry, p=placeholder: self.restore_placeholder(e, p))
+            entries.append(entry)
+
+        self.sub_heading_entries.append(entries)
+        self.next_entry_y += 35
+        self.sub_heading_container.config(height=self.next_entry_y)
+        self.sub_heading_container.update_idletasks()
+        self.dynamic_canvas.configure(scrollregion=self.dynamic_canvas.bbox("all"))
+
+
+    
+    import os
+
+    def save_to_ppt(self):
+        import time
+        from tkinter import messagebox
+        import win32com.client as win32
+
+        def Inches(val):
+            return val * 72
+
+        if hasattr(sys, '_MEIPASS'):
+            base_path = sys._MEIPASS
+        else:
+            base_path = os.path.abspath(".")
+
+        ppt_path = os.path.join(base_path, "PPTf .pptx")
+        self.ppt_path = ppt_path
+        excel_path = self.excel_file_path
+
+        if not os.path.exists(excel_path):
+            messagebox.showerror("Error", "Excel file not found!")
+            return
+        if not os.path.exists(ppt_path):
+            messagebox.showerror("Error", "PowerPoint file not found!")
+            return
+
+        excel = win32.Dispatch("Excel.Application")
+        powerpoint = win32.Dispatch("PowerPoint.Application")
+        excel.Visible = True
+
+        try:
+            workbook = excel.Workbooks.Open(excel_path)
+            presentation = powerpoint.Presentations.Open(ppt_path)
+            main_heading = self.main_heading_entry.get().strip()
+            self.original_slide_count = presentation.Slides.Count
+
+            try:
+                tol_sheet = workbook.Sheets("Tolerances")
+                used_range = tol_sheet.UsedRange
+                data = used_range.Value
+                headers = data[0]
+                # Identify column indexes for required fields
+                model_name_col = map_name_col = kpi_achieved_col = blockid1_col = blockid2_col = None
+                for idx, header in enumerate(headers):
+                    h = str(header).strip().lower()
+                    if h == "model name":
+                        model_name_col = idx
+                    elif h == "map name":
+                        map_name_col = idx
+                    elif h == "kpi achieved":
+                        kpi_achieved_col = idx
+                    elif h == "kpi blockid1 (target vvt)":
+                        blockid1_col = idx
+                    elif h == "kpi blockid2 (reference vvt)":
+                        blockid2_col = idx
+                if model_name_col is None or map_name_col is None or kpi_achieved_col is None:
+                    messagebox.showerror("Error", "Required columns (Model Name, Map Name, KPI achieved) not found in Tolerances sheet.")
+                    return
+
+                # Build dictionaries for KPI and BlockID values
+                model_kpi = {}
+                model_blockid1 = {}
+                model_blockid2 = {}
+                map_kpi = {}
+                map_blockid1 = {}
+                map_blockid2 = {}
+                for row in data[1:]:
+                    m_name = str(row[model_name_col]).strip() if row[model_name_col] is not None else None
+                    m_map = str(row[map_name_col]).strip() if row[map_name_col] is not None else None
+                    kpi_value = str(row[kpi_achieved_col]).strip() if row[kpi_achieved_col] is not None else ""
+                    blockid1_val = str(row[blockid1_col]).strip() if blockid1_col is not None and row[blockid1_col] is not None else ""
+                    blockid2_val = str(row[blockid2_col]).strip() if blockid2_col is not None and row[blockid2_col] is not None else ""
+                    if m_name:
+                        model_kpi[m_name.lower()] = kpi_value
+                        model_blockid1[m_name.lower()] = blockid1_val
+                        model_blockid2[m_name.lower()] = blockid2_val
+                    if m_map:
+                        map_kpi[m_map.lower()] = kpi_value
+                        map_blockid1[m_map.lower()] = blockid1_val
+                        map_blockid2[m_map.lower()] = blockid2_val
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to read Tolerances sheet: {str(e)}")
+                return
+
+            dark_green = 0x00008000  # RGB(0,128,0)
+            dark_red   = 0x0000008B  # RGB(139,0,0)
+
+            for slide_number in [5, 6]:
+                try:
+                    slide = presentation.Slides.Item(slide_number)
+                    table_shape = None
+                    for shape in slide.Shapes:
+                        if hasattr(shape, "HasTable") and shape.HasTable:
+                            table_shape = shape
+                            break
+                    if table_shape is None:
+                        continue
+
+                    row_count = table_shape.Table.Rows.Count
+                    col_count = table_shape.Table.Columns.Count
+
+                    model_name_col_index = None
+                    kpi_achieved_col_index = None
+                    blockid1_col_index = None
+                    blockid2_col_index = None
+                    for col in range(1, col_count + 1):
+                        header_text = table_shape.Table.Cell(1, col).Shape.TextFrame.TextRange.Text.strip().lower()
+                        if header_text == "model name":
+                            model_name_col_index = col
+                        elif header_text == "kpi achieved":
+                            kpi_achieved_col_index = col
+                        elif header_text == "blockid1":
+                            blockid1_col_index = col
+                        elif header_text == "blockid2":
+                            blockid2_col_index = col
+
+                    for r in range(2, row_count + 1):
+                        try:
+                            m_from_table = table_shape.Table.Cell(r, model_name_col_index).Shape.TextFrame.TextRange.Text.strip().lower()
+                            # Update KPI achieved
+                            if kpi_achieved_col_index is not None and m_from_table in model_kpi:
+                                raw_val = model_kpi[m_from_table]
+                                cell = table_shape.Table.Cell(r, kpi_achieved_col_index).Shape.TextFrame.TextRange
+                                cell.Text = f"{raw_val} within KPI" if raw_val else ""
+                                try:
+                                    numeric_val = float(raw_val.replace("%", "").strip())
+                                    cell.Font.Color.RGB = dark_green if numeric_val >= 95 else dark_red
+                                except:
+                                    pass
+                            # Update BlockID1
+                            if blockid1_col_index is not None and m_from_table in model_blockid1:
+                                blockid1_val = model_blockid1[m_from_table]
+                                cell = table_shape.Table.Cell(r, blockid1_col_index).Shape.TextFrame.TextRange
+                                cell.Text = blockid1_val
+                            # Update BlockID2
+                            if blockid2_col_index is not None and m_from_table in model_blockid2:
+                                blockid2_val = model_blockid2[m_from_table]
+                                cell = table_shape.Table.Cell(r, blockid2_col_index).Shape.TextFrame.TextRange
+                                cell.Text = blockid2_val
+                        except Exception:
+                            continue
+
+                except Exception:
+                    continue
+
+            green_color = 0x00B400     
+            light_red_color = 0xC0       
+            dark_blue = 0x00CF7859   
+            light_blue = 0x00FCDDC0  
+            box_width = 3.8
+            box_height = 1.06
+            header_height = box_height * 0.15
+            content_height = box_height * 0.85
+            big_box_left = 0.2
+            big_box_top = 5.0
+
+            block_ids_selected = hasattr(self, 'block_data') and any(value.strip() for value in self.block_data.values())
+
+            for row_index, row in enumerate(self.sub_heading_entries):
+                new_slide = presentation.Slides.Add(7 + row_index, 12)  
+
+                # Main Heading
+                main_textbox = new_slide.Shapes.AddTextbox(1, Inches(0.2), Inches(0.2), Inches(10), Inches(1))
+                main_textbox.TextFrame.TextRange.Text = main_heading
+                main_textbox.TextFrame.TextRange.Font.Size = 28
+                main_textbox.TextFrame.WordWrap = False
+
+                sub_heading_text = row[0].get().strip()
+                if sub_heading_text and sub_heading_text != "Enter Sub Heading...":
+                    sub_textbox = new_slide.Shapes.AddTextbox(1, Inches(0.2), Inches(0.7), Inches(10), Inches(1))
+                    sub_textbox.TextFrame.TextRange.Text = sub_heading_text
+                    sub_textbox.TextFrame.TextRange.Font.Size = 28
+                    sub_textbox.TextFrame.TextRange.Font.Name = "Bosch Office Sans Heading"
+                    sub_textbox.TextFrame.TextRange.Font.Color.RGB = 0x583700
+
+                # Get tab name and map names from the row.
+                tab_name = row[3].get().strip()
+                map_names = [name.get().strip() for name in row[1:3] if name.get().strip()]
+                if not tab_name or not map_names:
+                    continue
+
+                sheet = next((s for s in workbook.Sheets if s.Name.lower() == tab_name.lower()), None)
+                if not sheet:
+                    messagebox.showwarning("Sheet Not Found", f"Sheet '{tab_name}' not found.")
+                    continue
+
+                # Quality Criteria Table
+                quality_table = new_slide.Shapes.AddTable(2, 1, Inches(big_box_left), Inches(big_box_top), Inches(box_width), Inches(box_height))
+                quality_table.Table.Rows(1).Height = Inches(header_height)
+                quality_table.Table.Rows(2).Height = Inches(content_height)
+                quality_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Text = "Quality Criteria"
+                quality_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Text = row[4].get().strip()
+                quality_table.Table.Cell(1, 1).Shape.Fill.ForeColor.RGB = dark_blue
+                quality_table.Table.Cell(2, 1).Shape.Fill.ForeColor.RGB = light_blue
+                quality_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Font.Name = "Bosch Office Sans Body"
+                quality_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Font.Size = 12
+                quality_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Font.Name = "Bosch Office Sans Body"
+                quality_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Font.Size = 10
+
+                # Add borders and center text for Quality Criteria Table
+                for r in range(1, quality_table.Table.Rows.Count + 1):
+                    for c in range(1, quality_table.Table.Columns.Count + 1):
+                        cell = quality_table.Table.Cell(r, c)
+                        for border_index in (1, 2, 3, 4):
+                            try:
+                                b_obj = cell.Borders(border_index)
+                                b_obj.Visible = -1
+                                b_obj.Weight = 1
+                                b_obj.ForeColor.RGB = 0x000000
+                            except Exception as e:
+                                print(f"Error setting border {border_index} for cell ({r},{c}): {e}")
+                        cell.Shape.TextFrame.TextRange.ParagraphFormat.Alignment = 2  
+                        cell.Shape.TextFrame.VerticalAnchor = 3  
+
+                # Results Table
+                results_table = new_slide.Shapes.AddTable(2, 1, Inches(big_box_left + box_width), Inches(big_box_top), Inches(box_width), Inches(box_height))
+                results_table.Table.Rows(1).Height = Inches(header_height)
+                results_table.Table.Rows(2).Height = Inches(content_height)
+                results_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Text = "Results"
+                results_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Text = ""
+                results_table.Table.Cell(1, 1).Shape.Fill.ForeColor.RGB = dark_blue
+                results_table.Table.Cell(2, 1).Shape.Fill.ForeColor.RGB = light_blue
+                results_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Font.Name = "Bosch Office Sans Body"
+                results_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Font.Size = 12
+                results_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Font.Name = "Bosch Office Sans Body"
+                results_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Font.Size = 10
+
+                # Add borders and center text for Results Table
+                for r in range(1, results_table.Table.Rows.Count + 1):
+                    for c in range(1, results_table.Table.Columns.Count + 1):
+                        cell = results_table.Table.Cell(r, c)
+                        for border_index in (1, 2, 3, 4):
+                            try:
+                                b_obj = cell.Borders(border_index)
+                                b_obj.Visible = -1
+                                b_obj.Weight = 1
+                                b_obj.ForeColor.RGB = 0x000000
+                            except Exception as e:
+                                print(f"Error setting border {border_index} for cell ({r},{c}) in Results Table: {e}")
+                        cell.Shape.TextFrame.TextRange.ParagraphFormat.Alignment = 2
+                        cell.Shape.TextFrame.VerticalAnchor = 3
+
+                # Remarks Table
+                remarks_table = new_slide.Shapes.AddTable(2, 1, Inches(big_box_left + 2 * box_width), Inches(big_box_top), Inches(box_width), Inches(box_height))
+                remarks_table.Table.Rows(1).Height = Inches(header_height)
+                remarks_table.Table.Rows(2).Height = Inches(content_height)
+                remarks_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Text = "Remarks"
+                remarks_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Text = ""
+                remarks_table.Table.Cell(1, 1).Shape.Fill.ForeColor.RGB = dark_blue
+                remarks_table.Table.Cell(2, 1).Shape.Fill.ForeColor.RGB = light_blue
+                remarks_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Font.Name = "Bosch Office Sans Body"
+                remarks_table.Table.Cell(1, 1).Shape.TextFrame.TextRange.Font.Size = 12
+                remarks_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Font.Name = "Bosch Office Sans Body"
+                remarks_table.Table.Cell(2, 1).Shape.TextFrame.TextRange.Font.Size = 10
+
+                # Add borders and center text for Remarks Table
+                for r in range(1, remarks_table.Table.Rows.Count + 1):
+                    for c in range(1, remarks_table.Table.Columns.Count + 1):
+                        cell = remarks_table.Table.Cell(r, c)
+                        for border_index in (1, 2, 3, 4):
+                            try:
+                                b_obj = cell.Borders(border_index)
+                                b_obj.Visible = -1  
+                                b_obj.Weight = 1
+                                b_obj.ForeColor.RGB = 0x000000
+                            except Exception as e:
+                                print(f"Error setting border {border_index} for cell ({r},{c}) in Remarks Table: {e}")
+                        cell.Shape.TextFrame.TextRange.ParagraphFormat.Alignment = 2
+                        cell.Shape.TextFrame.VerticalAnchor = 3
+
+                results_value = None
+                for m in map_names:
+                    key = m.lower()
+                    if key in map_kpi or key in map_blockid1 or key in map_blockid2:
+                        results_cell = results_table.Table.Cell(2, 1).Shape.TextFrame.TextRange
+                        if block_ids_selected:
+                            blockid1_val = map_blockid1.get(key, "").strip()
+                            blockid2_val = map_blockid2.get(key, "").strip()
+                            results_text = f"BlockID1 : {blockid1_val} Data within KPI\nBlockID2 : {blockid2_val} Data within KPI"
+                            results_cell.Text = results_text
+                            try:
+                                # Try converting each blockid value to a numeric value
+                                numeric_val1 = float(blockid1_val.replace("%", "").strip()) if blockid1_val else None
+                                numeric_val2 = float(blockid2_val.replace("%", "").strip()) if blockid2_val else None
+                                if numeric_val1 is not None and numeric_val2 is not None:
+                                    average_val = (numeric_val1 + numeric_val2) / 2.0
+                                elif numeric_val1 is not None:
+                                    average_val = numeric_val1
+                                elif numeric_val2 is not None:
+                                    average_val = numeric_val2
+                                else:
+                                    average_val = None
+
+                                if numeric_val1 is not None:
+                                    results_cell.Paragraphs(1).Font.Color.RGB = green_color if numeric_val1 >= 95 else light_red_color
+                                if numeric_val2 is not None:
+                                    if results_cell.Paragraphs().Count >= 2:
+                                        results_cell.Paragraphs(2).Font.Color.RGB = green_color if numeric_val2 >= 95 else light_red_color
+                                results_value = average_val  
+                            except Exception:
+                                results_cell.Font.Color.RGB = 0x000000  
+                                results_value = None
+                        else:
+                            if key in map_kpi and map_kpi[key].strip() != "":
+                                raw_value = map_kpi[key]
+                            elif key in map_blockid1 and map_blockid1[key].strip() != "":
+                                raw_value = map_blockid1[key]
+                            elif key in map_blockid2 and map_blockid2[key].strip() != "":
+                                raw_value = map_blockid2[key]
+                            else:
+                                raw_value = ""
+                            
+                            if raw_value != "":
+                                results_cell.Text = f"{raw_value} Data within KPI"
+                                try:
+                                    numeric_value = float(raw_value.replace("%", "").strip())
+                                    if numeric_value >= 95:
+                                        results_cell.Font.Color.RGB = green_color
+                                    else:
+                                        results_cell.Font.Color.RGB = light_red_color
+                                    results_value = numeric_value
+                                except Exception:
+                                    results_cell.Font.Color.RGB = 0x000000
+                                    results_value = None
+                            else:
+                                results_cell.Text = ""
+                        break  
+
+                remarks_cell = remarks_table.Table.Cell(2, 1).Shape.TextFrame.TextRange
+                if results_value is not None:
+                    if results_value >= 95:
+                        remarks_cell.Text = "Data is within KPI can be taken forward for next stage"
+                        remarks_cell.Font.Color.RGB = green_color  # Set to green
+                    else:
+                        remarks_cell.Text = "Data is outside KPI further fine tuning is required"
+                        remarks_cell.Font.Color.RGB = light_red_color  # Set to red
+                else:
+                    remarks_cell.Text = ""
+
+                for chart_index, m in enumerate(map_names):
+                    for chart_obj in sheet.ChartObjects():
+                        chart = chart_obj.Chart
+                        if chart.HasTitle and chart.ChartTitle.Text.strip().lower() == m.lower():
+                            chart_obj.CopyPicture(1, -4147)
+                            time.sleep(1)
+                            pasted_chart = new_slide.Shapes.Paste().Item(1)
+                            pasted_chart.Left = Inches(0.2 + chart_index * 5.7)
+                            pasted_chart.Top = Inches(1.44)
+                            pasted_chart.Width = Inches(5.7)
+                            pasted_chart.Height = Inches(3.5)
+                            break
+
+                formula_text = row[5].get().strip()
+                formula_box = new_slide.Shapes.AddTextbox(1, Inches(6.76), Inches(1.08), Inches(5.6), Inches(0.24))
+                formula_box.TextFrame.TextRange.Text = formula_text
+                formula_box.TextFrame.TextRange.Font.Size = 11
+
+            presentation.Save()
+            messagebox.showinfo("Success", f"Added {len(self.sub_heading_entries)} slides successfully!")
+
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to update PPT.\nError: {str(e)}")
+        finally:
+            try:
+                if 'workbook' in locals() and workbook is not None:
+                    workbook.Close(SaveChanges=False)
+            except Exception:
+                pass
+            try:
+                if 'presentation' in locals() and presentation is not None:
+                    presentation.Close()
+            except Exception:
+                pass
+            try:
+                excel.Quit()
+            except Exception:
+                pass
+            try:
+                powerpoint.Quit()
+            except Exception:
+                pass
+
+    def clear_placeholder(self, entry, placeholder):
+        if entry.get() == placeholder:
+            entry.delete(0, "end")
+            entry.config(fg="black")
+
+    def restore_placeholder(self, entry, placeholder):
+        if not entry.get():
+            entry.insert(0, placeholder)
+            entry.config(fg="gray")
+
+
+    """def insert_plot_data(self, map_name, x_var, x_range, y_var, y_range, tolerance_min, tolerance_max, tabs):
+        Insert plot data into the database.
+        con = self.connect_to_db()
+        if con is not None:
+            try:
+                cursor = con.cursor()
+                # Query to insert data into the database with separate tolerance_min and tolerance_max columns
+                query = 
+                #INSERT INTO plot_details (map_name, x_variable, x_range, y_variable, y_range, tolerance_min, tolerance_max, tabs)
+                #VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                
+                # Print the data to debug
+                print(f"Inserting data: {map_name}, {x_var}, {x_range}, {y_var}, {y_range}, {tolerance_min}, {tolerance_max}, {tabs}")
+
+                # Execute the query
+                cursor.execute(query, (map_name, x_var, x_range, y_var, y_range, tolerance_min, tolerance_max, tabs))
+                con.commit()
+                print(f"Plot data for '{map_name}' inserted into database successfully")
+
+            except Error as e:
+                print(f"Error inserting plot data: {e}")
+            finally:
+                cursor.close()
+                con.close()
+
+    def connect_to_db(self):
+        Connect to the MySQL database.
+        try:
+            # Ensure that the host is 'localhost' or '127.0.0.1'
+            con = mysql.connector.connect(
+                host='127.0.0.1',  # Change from 'localhost' if needed
+                user='root',
+                password='Swiggy@1998',
+                auth_plugin='mysql_native_password',
+                database='plot_data',
+                port=3306  # Specify the port explicitly if needed
+            )
+            if con.is_connected():
+                print("Database connection established")
+            return con
+        except Error as e:
+            print(f"Error connecting to database: {e}")
+            return None"""
+
+    def add_button(self):
+        current_row = len(self.entries) + 3
+        new_row = {}
+
+        headers = ["Model", "X Variable", "X Range", "Y Variable", "Y Range", 
+                "Tolerance", "Map Name", "Tabs", "Sr. No."]
+        
+        model_options = [
+            "Rail pr pre controller",
+            "Rail pr set point controller",
+            "Intake Temperature",
+            "Back Pr _Before Turbo _ P3",
+            "Back Pr _After Turbo _ P4",
+            "Back Pr _Before cat_ P5",
+            "Back Pr _After cat_ P6",
+            "Exh Temp _ Before Turbo_T3",
+            "Exh Temp _ After Turbo_T4",
+            "Exh Temp _ Before Turbo_T5",
+            "Exh Temp _ Mid Cat_T6",
+            "Exh Temp _ After Cat_T7",
+            "Aircharge _ HFM",
+            "Aircharge _ Pbased",
+            "Aircharge _ Throttle",
+            "Mixture Control",
+            "Fuel Path",
+            "Torque Model"
+        ]
+        
+        for col, header in enumerate(headers):
+            if header == "Model":
+                model_var = tk.StringVar(self.sub_frame)
+                new_row[header] = ttk.Combobox(
+                    self.sub_frame,
+                    textvariable=model_var,
+                    values=model_options,
+                    state="readonly",
+                    width=5
+                )
+                new_row[header].set("Select")
+                new_row[header].grid(row=current_row, column=col, sticky="nsew", padx=1, pady=1)
+
+            elif header == "X Variable":
+                x_var = tk.StringVar(self.sub_frame)
+                x_combo = ttk.Combobox(
+                    self.sub_frame,
+                    textvariable=x_var,
+                    values=["Select X"] + self.df.columns.tolist(),
+                    width=5,
+                    state="normal"  # user can type
+                )
+                x_combo.set("Select X")  # initial placeholder
+                x_combo.grid(row=current_row, column=col, sticky="nsew", padx=2, pady=1)
+
+                def on_focus_in_x(event):
+                    if x_var.get() == "Select X":
+                        x_var.set("")
+                def on_focus_out_x(event):
+                    if not x_var.get().strip():
+                        x_var.set("Select X")
+                x_combo.bind("<FocusIn>", on_focus_in_x)
+                x_combo.bind("<FocusOut>", on_focus_out_x)
+
+                def on_key_release_x(event):
+                    typed = x_var.get().strip().lower()
+                    if typed == "" or typed == "select x":
+                        x_combo['values'] = ["Select X"] + self.df.columns.tolist()
+                    else:
+                        filtered = [col for col in self.df.columns if typed in col.lower()]
+                        x_combo['values'] = ["Select X"] + filtered
+
+                x_combo.bind("<KeyRelease>", on_key_release_x)
+                new_row[header] = x_combo
+
+            elif header == "Y Variable":
+                y_var = tk.StringVar(self.sub_frame)
+                y_combo = ttk.Combobox(
+                    self.sub_frame,
+                    textvariable=y_var,
+                    values=["Select Y"] + self.df.columns.tolist(),
+                    width=5,
+                    state="normal"
+                )
+                y_combo.set("Select Y")
+                y_combo.grid(row=current_row, column=col, sticky="nsew", padx=2, pady=1)
+
+                def on_focus_in_y(event):
+                    if y_var.get() == "Select Y":
+                        y_var.set("")  
+                def on_focus_out_y(event):
+                    if not y_var.get().strip():
+                        y_var.set("Select Y")
+                y_combo.bind("<FocusIn>", on_focus_in_y)
+                y_combo.bind("<FocusOut>", on_focus_out_y)
+
+                def on_key_release_y(event):
+                    typed = y_var.get().strip().lower()
+                    if typed == "" or typed == "select y":
+                        y_combo['values'] = ["Select Y"] + self.df.columns.tolist()
+                    else:
+                        filtered = [col for col in self.df.columns if typed in col.lower()]
+                        y_combo['values'] = ["Select Y"] + filtered
+
+                y_combo.bind("<KeyRelease>", on_key_release_y)
+                new_row[header] = y_combo
+
+            elif header in ["X Range", "Y Range", "Tolerance"]:
+                range_frame = Frame(self.sub_frame, bg="snow")
+                range_frame.grid(row=current_row, column=col, sticky="nsew", padx=2, pady=2)
+                def on_focus_in(event, entry, default_text):
+                    if entry.get() == default_text:
+                        entry.delete(0, "end")
+                        entry.config(fg="black")
+                def on_focus_out(event, entry, default_text):
+                    if entry.get().strip() == "":
+                        entry.insert(0, default_text)
+                        entry.config(fg="grey69")
+                min_input = Entry(range_frame, font=("Arial", 12), bg="snow", fg="grey69", width=2)
+                min_input.pack(side="left", padx=2, pady=2, expand=True, fill="x")
+                min_input.insert(0, "Min")
+                min_input.bind("<FocusIn>", lambda event, e=min_input: on_focus_in(event, e, "Min"))
+                min_input.bind("<FocusOut>", lambda event, e=min_input: on_focus_out(event, e, "Min"))
+                separator_min_max = Label(range_frame, text="|", font=("Arial", 10, "bold"), bg="snow", fg="black", width=2)
+                separator_min_max.pack(side="left", padx=0, pady=0)
+                max_input = Entry(range_frame, font=("Arial", 12), bg="snow", fg="grey69", width=2)
+                max_input.pack(side="left", padx=2, pady=2, expand=True, fill="x")
+                max_input.insert(0, "Max")
+                max_input.bind("<FocusIn>", lambda event, e=max_input: on_focus_in(event, e, "Max"))
+                max_input.bind("<FocusOut>", lambda event, e=max_input: on_focus_out(event, e, "Max"))
+                if header in ["X Range", "Y Range"]:
+                    separator_max_major = Label(range_frame, text="|", font=("Arial", 10, "bold"), bg="snow", fg="black", width=2)
+                    separator_max_major.pack(side="left", padx=0, pady=0)
+                    major_input = Entry(range_frame, font=("Arial", 12), bg="snow", fg="grey69", width=2)
+                    major_input.pack(side="left", padx=2, pady=2, expand=True, fill="x")
+                    major_input.insert(0, "Major")
+                    major_input.bind("<FocusIn>", lambda event, e=major_input: on_focus_in(event, e, "Major"))
+                    major_input.bind("<FocusOut>", lambda event, e=major_input: on_focus_out(event, e, "Major"))
+                    new_row[f"{header} Major Input"] = major_input
+                    new_row[f"{header} Separator Max-Major"] = separator_max_major
+                new_row[f"{header} Min Input"] = min_input
+                new_row[f"{header} Max Input"] = max_input
+                new_row[f"{header} Separator Min-Max"] = separator_min_max
+
+            elif header == "Map Name":
+                map_name_entry = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="black", width=4)
+                map_name_entry.grid(row=current_row, column=col, sticky="nsew", padx=2, pady=2)
+                new_row["Map Name Entry"] = map_name_entry
+
+                def update_map_name(*args):
+                    x_value = new_row["X Variable"].get()
+                    y_value = new_row["Y Variable"].get()
+                    if (x_value not in ["Select X", "", "Please select"]) and (y_value not in ["Select Y", "", "Please select"]):
+                        new_map = f"{x_value} vs {y_value}"
+                        if new_row["Map Name Entry"].get().strip() in ["", "Please select"]:
+                            new_row["Map Name Entry"].delete(0, END)
+                            new_row["Map Name Entry"].insert(0, new_map)
+                new_row["X Variable"].bind("<<ComboboxSelected>>", update_map_name)
+                new_row["Y Variable"].bind("<<ComboboxSelected>>", update_map_name)
+                new_row[header] = map_name_entry
+
+            elif header == "Tabs":
+                def on_focus_in(event, entry, default_text):
+                    if entry.get() == default_text:
+                        entry.delete(0, "end")
+                        entry.config(fg="black")
+                def on_focus_out(event, entry, default_text):
+                    if entry.get().strip() == "":
+                        entry.insert(0, default_text)
+                        entry.config(fg="grey69")
+                tab_name_entry = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=5)
+                tab_name_entry.insert(0, "Enter tab name")
+                tab_name_entry.bind("<FocusIn>", lambda event, e=tab_name_entry: on_focus_in(event, e, "Enter tab name"))
+                tab_name_entry.bind("<FocusOut>", lambda event, e=tab_name_entry: on_focus_out(event, e, "Enter tab name"))
+                tab_name_entry.grid(row=current_row, column=col, sticky="nsew", padx=2, pady=2)
+                new_row[header] = tab_name_entry
+
+            elif header == "Sr. No.":
+                new_row[header] = Label(self.sub_frame, text=str(len(self.entries) + 1), font=("Arial", 10), bg="snow", fg="black", bd=1, relief=RIDGE, width=3)
+                new_row[header].grid(row=current_row, column=col, sticky="nsew", padx=1, pady=1)
+
+        self.entries.append(new_row)
+        self.sub_frame.update()
+        self.sub_frame.grid_rowconfigure(current_row, weight=0)
+        for col in range(len(new_row)):
+            self.sub_frame.grid_columnconfigure(col, weight=1)
+
+
+    def delete_button(self):
+        if self.entries:
+            last_row = self.entries.pop()
+            for widget in last_row.values():
+                try:
+                    widget.destroy()
+                except Exception as e:
+                    print("Error while destroying widget:", e)
+        else:
+            print("No more rows to delete!")
+
+
+
+    def create_table(self):
+        column_headers = ["Model", "X Variable", "X Range", "Y Variable", "Y Range", 
+                        "Tolerance", "Map Name", "Tabs", "Sr. No."]
+        for col, header in enumerate(column_headers):
+            if header in ["Sr. No.", "Tabs", "Model"]:
+                Label(
+                    self.sub_frame,
+                    text=header,
+                    font=("Arial", 10, "bold"),
+                    bg="snow",
+                    fg="black",
+                    bd=2,
+                    relief=RIDGE,
+                    width=3 if header == "Sr. No." else 5
+                ).grid(row=1, column=col, sticky="nsew", padx=1, pady=1)
+            elif header in ["X Variable", "Y Variable"]:
+                btn = Button(
+                    self.sub_frame,
+                    text=header,
+                    font=("Arial", 10, "bold"),
+                    bg="snow",
+                    fg="black",
+                    bd=2,
+                    relief=RIDGE,
+                    cursor="hand1",
+                    width=6
+                )
+                btn.grid(row=1, column=col, sticky="nsew", padx=1, pady=1)
+                if header == "X Variable":
+                    self.x_button = btn
+                else:
+                    self.y_button = btn
+            else:
+                Label(
+                    self.sub_frame,
+                    text=header,
+                    font=("Arial", 10, "bold"),
+                    bg="snow",
+                    fg="black",
+                    bd=2,
+                    relief=RIDGE,
+                    width=3
+                ).grid(row=1, column=col, sticky="nsew", padx=1, pady=1)
+
+        for col in range(len(column_headers)):
+            self.sub_frame.grid_columnconfigure(col, weight=1, uniform="cols")
+        self.entries = []
+
+
+    import json
+    from tkinter import filedialog
+
+    def save_rows(self):
+        saved_data = []
+        for entry in self.entries:
+            row_data = {
+                'Model': entry['Model'].get(),
+                'X Variable': entry['X Variable'].get(),
+                'X Range': {
+                    'Min': entry['X Range Min Input'].get(),
+                    'Max': entry['X Range Max Input'].get(),
+                    'Major': entry.get('X Range Major Input', tk.Entry()).get() if 'X Range Major Input' in entry else ''
+                },
+                'Y Variable': entry['Y Variable'].get(),
+                'Y Range': {
+                    'Min': entry['Y Range Min Input'].get(),
+                    'Max': entry['Y Range Max Input'].get(),
+                    'Major': entry.get('Y Range Major Input', tk.Entry()).get() if 'Y Range Major Input' in entry else ''
+                },
+                'Tolerance': {
+                    'Min': entry['Tolerance Min Input'].get(),
+                    'Max': entry['Tolerance Max Input'].get()
+                },
+                'Map Name': entry['Map Name'].get(),
+                'Tabs': entry['Tabs'].get()
+            }
+            saved_data.append(row_data)
+        
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        if not file_path:
+            return
+        with open(file_path, 'w') as f:
+            json.dump(saved_data, f, indent=4)
+
+    def clear_all_rows(self):
+        for widget in self.sub_frame.winfo_children():
+            info = widget.grid_info()
+            if info.get('row', 0) >= 3:
+                widget.destroy()
+        self.entries = []
+
+    def import_rows(self):
+        file_path = filedialog.askopenfilename(
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        if not file_path:
+            return
+        with open(file_path, 'r') as f:
+            saved_data = json.load(f)
+        
+        self.clear_all_rows()
+        
+        for row_data in saved_data:
+            self.add_button()
+            current_entry = self.entries[-1]
+            
+            # Model
+            current_entry['Model'].set(row_data['Model'])
+            
+            # X Variable
+            current_entry['X Variable'].set(row_data['X Variable'])
+            
+            # X Range
+            x_min = row_data['X Range']['Min']
+            current_entry['X Range Min Input'].delete(0, tk.END)
+            current_entry['X Range Min Input'].insert(0, x_min)
+            current_entry['X Range Min Input'].config(fg='grey69' if x_min == 'Min' else 'black')
+            
+            x_max = row_data['X Range']['Max']
+            current_entry['X Range Max Input'].delete(0, tk.END)
+            current_entry['X Range Max Input'].insert(0, x_max)
+            current_entry['X Range Max Input'].config(fg='grey69' if x_max == 'Max' else 'black')
+            
+            if 'Major' in row_data['X Range'] and 'X Range Major Input' in current_entry:
+                x_major = row_data['X Range']['Major']
+                current_entry['X Range Major Input'].delete(0, tk.END)
+                current_entry['X Range Major Input'].insert(0, x_major)
+                current_entry['X Range Major Input'].config(fg='grey69' if x_major == 'Major' else 'black')
+            
+            # Y Variable
+            current_entry['Y Variable'].set(row_data['Y Variable'])
+            
+            # Y Range
+            y_min = row_data['Y Range']['Min']
+            current_entry['Y Range Min Input'].delete(0, tk.END)
+            current_entry['Y Range Min Input'].insert(0, y_min)
+            current_entry['Y Range Min Input'].config(fg='grey69' if y_min == 'Min' else 'black')
+            
+            y_max = row_data['Y Range']['Max']
+            current_entry['Y Range Max Input'].delete(0, tk.END)
+            current_entry['Y Range Max Input'].insert(0, y_max)
+            current_entry['Y Range Max Input'].config(fg='grey69' if y_max == 'Max' else 'black')
+            
+            if 'Major' in row_data['Y Range'] and 'Y Range Major Input' in current_entry:
+                y_major = row_data['Y Range']['Major']
+                current_entry['Y Range Major Input'].delete(0, tk.END)
+                current_entry['Y Range Major Input'].insert(0, y_major)
+                current_entry['Y Range Major Input'].config(fg='grey69' if y_major == 'Major' else 'black')
+            
+            # Tolerance
+            tol_min = row_data['Tolerance']['Min']
+            current_entry['Tolerance Min Input'].delete(0, tk.END)
+            current_entry['Tolerance Min Input'].insert(0, tol_min)
+            current_entry['Tolerance Min Input'].config(fg='grey69' if tol_min == 'Min' else 'black')
+            
+            tol_max = row_data['Tolerance']['Max']
+            current_entry['Tolerance Max Input'].delete(0, tk.END)
+            current_entry['Tolerance Max Input'].insert(0, tol_max)
+            current_entry['Tolerance Max Input'].config(fg='grey69' if tol_max == 'Max' else 'black')
+            
+            # Map Name
+            map_name = row_data['Map Name']
+            current_entry['Map Name'].delete(0, tk.END)
+            current_entry['Map Name'].insert(0, map_name)
+            
+            # Tabs
+            tabs_value = row_data['Tabs']
+            current_entry['Tabs'].delete(0, tk.END)
+            current_entry['Tabs'].insert(0, tabs_value)
+            current_entry['Tabs'].config(fg='grey69' if tabs_value == 'Enter tab name' else 'black')
+
+       
+    def show_x_range_input(self):
+        # Clear existing inputs, if any
+        if hasattr(self, 'x_min_input'):
+            self.x_min_input.grid_forget()
+        if hasattr(self, 'x_max_input'):
+            self.x_max_input.grid_forget()
+        if hasattr(self, 'x_range_separator'):
+            self.x_range_separator.grid_forget()
+
+        self.x_min_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=10)
+        self.x_min_input.grid(row=2, column=2, sticky="w", padx=2, pady=2)
+        self.x_min_input.insert(0, "Min")
+
+        self.x_range_separator = Label(self.sub_frame, text="|", font=("Arial", 12, "bold"), bg="snow", fg="black")
+        self.x_range_separator.grid(row=2, column=2, sticky="", padx=2, pady=2)
+
+        self.x_max_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=10)
+        self.x_max_input.grid(row=2, column=2, sticky="e", padx=2, pady=2)
+        self.x_max_input.insert(0, "Max")
+
+        if hasattr(self, 'x_var') and self.x_var.get() in self.df.columns:
+            selected_column = self.x_var.get()
+            min_value = self.df[selected_column].min()
+            max_value = self.df[selected_column].max()
+            self.x_min_input.delete(0, tk.END)
+            self.x_max_input.delete(0, tk.END)
+            self.x_min_input.insert(0, min_value)
+            self.x_max_input.insert(0, max_value)
+            # self.x_min_input.configure(state="readonly")  # Prevent manual editing
+            # self.x_max_input.configure(state="readonly")
+
+    def create_x_input_fields(self):
+        self.x_min_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=10)
+        self.x_min_input.grid(row=2, column=2, sticky="w", padx=2, pady=2)
+        self.x_min_input.insert(0, "Min")  # Placeholder text
+
+        self.x_max_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=10)
+        self.x_max_input.grid(row=2, column=3, sticky="e", padx=2, pady=2)
+        self.x_max_input.insert(0, "Max") 
+
+    def show_y_range_input(self):
+        if hasattr(self, 'y_min_input'):
+            self.y_min_input.grid_forget()
+        if hasattr(self, 'y_max_input'):
+            self.y_max_input.grid_forget()
+        if hasattr(self, 'y_range_separator'):
+            self.y_range_separator.grid_forget()
+
+        self.y_min_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=10)
+        self.y_min_input.grid(row=2, column=4, sticky="w", padx=2, pady=2)
+        self.y_min_input.insert(0, "Min")
+
+        self.y_range_separator = Label(self.sub_frame, text="|", font=("Arial", 12, "bold"), bg="snow", fg="black")
+        self.y_range_separator.grid(row=2, column=4, sticky="", padx=2, pady=2)
+
+        self.y_max_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="grey69", width=10)
+        self.y_max_input.grid(row=2, column=4, sticky="e", padx=2, pady=2)
+        self.y_max_input.insert(0, "Max")
+
+        if hasattr(self, 'y_var') and self.y_var.get() in self.df.columns:
+            selected_column = self.y_var.get()
+            min_value = self.df[selected_column].min()
+            max_value = self.df[selected_column].max()
+            self.y_min_input.delete(0, tk.END)
+            self.y_max_input.delete(0, tk.END)
+            self.y_min_input.insert(0, min_value)
+            self.y_max_input.insert(0, max_value)
+            # self.y_min_input.configure(state="readonly")  # Prevent manual editing
+            # self.y_max_input.configure(state="readonly")
+
+    def show_to_range_input(self):
+        if hasattr(self, 'to_min_input'):
+            self.to_min_input.grid_forget()
+        if hasattr(self, 'to_max_input'):
+            self.to_max_input.grid_forget()
+        if hasattr(self, 'to_range_separator'):
+            self.to_range_separator.grid_forget()
+
+        # Create input fields for Min and Max Tolerance
+        self.to_min_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="black", width=10)
+        self.to_min_input.grid(row=2, column=5, sticky="w", padx=2, pady=2)
+        self.to_min_input.insert(0, "Min")
+
+        self.to_range_separator = Label(self.sub_frame, text="|", font=("Arial", 12, "bold"), bg="snow", fg="black")
+        self.to_range_separator.grid(row=2, column=6, sticky="", padx=2, pady=2)
+
+        self.to_max_input = Entry(self.sub_frame, font=("Arial", 12), bg="snow", fg="black", width=10)
+        self.to_max_input.grid(row=2, column=7, sticky="e", padx=2, pady=2)
+        self.to_max_input.insert(0, "Max")
+
+
+    def toggle_buttons(self):
+        if self.additional_buttons_frame.winfo_ismapped():
+            self.additional_buttons_frame.grid_forget()
+        else:
+            self.additional_buttons_frame.grid(row=3, column=0, pady=1, padx=10)
+
+    def upload_excel(self, file_path):
+        if file_path:
+            try:
+                excel_file = pd.ExcelFile(file_path)
+                sheet_names = excel_file.sheet_names 
+
+                selected_sheet = sheet_names[0]  
+               
+                self.df = pd.read_excel(file_path, sheet_name=selected_sheet)
+                self.excel_file_path = file_path 
+                print(f"Excel file loaded successfully from sheet: {selected_sheet}")
+                self.df = pd.read_excel(file_path, sheet_name=selected_sheet, index_col=None)
+                self.df.reset_index(drop=True, inplace=True) 
+
+                self.x_var = StringVar()
+                self.y_var = StringVar()
+
+                self.x_var.trace_add("write", self.update_x_range)
+                self.y_var.trace_add("write", self.update_y_range)
+                self.initialize_dropdowns()
+
+                # self.show_x_dropdown()
+                # self.show_y_dropdown()
+                self.entries = []
+                self.create_table()
+
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to load the Excel file.\nError: {str(e)}")
+
+
+    def upload_prompt(self):
+        response = messagebox.askyesno("Upload Your File", "Would you like to upload your Excel file?")
+        if response:
+            file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
+            if file_path:
+                self.upload_excel(file_path)
+
+
+    
+
+    
+    def update_x_range(self, *args):
+        selected_column = self.x_var.get()
+        if selected_column in self.df.columns:
+            min_value = self.df[selected_column].min()
+            max_value = self.df[selected_column].max()
+            self.x_min_input.delete(0, tk.END)
+            self.x_min_input.insert(0, min_value)
+            self.x_max_input.delete(0, tk.END)
+            self.x_max_input.insert(0, max_value)
+
+    def update_y_range(self, *args):
+        selected_column = self.y_var.get()
+        if selected_column in self.df.columns:
+            min_value = self.df[selected_column].min()
+            max_value = self.df[selected_column].max()
+            self.y_min_input.delete(0, tk.END)
+            self.y_min_input.insert(0, min_value)
+            self.y_max_input.delete(0, tk.END)
+            self.y_max_input.insert(0, max_value)  
+
+
+    def plot_scatter_to_excel(self):
+        try:
+            if not hasattr(self, 'excel_file_path') or not self.excel_file_path:
+                raise ValueError("No Excel file is loaded. Please upload a file first.")
+
+            file_path = self.excel_file_path
+            wb = load_workbook(file_path)
+
+            # Existing sheet names
+            existing_sheets = wb.sheetnames
+            print(f"Existing sheets before creating: {existing_sheets}")
+
+            for idx, row in enumerate(self.entries):
+                try:
+                    x_column = row["X Variable"].get().strip()
+                    y_column = row["Y Variable"].get().strip()
+                    tab_name = row["Tabs"].get().strip()
+                    map_name = row["Map Name"].get().strip()
+
+                    if not tab_name:
+                        messagebox.showerror("Error", f"Row {idx + 1}: Tab name is missing.")
+                        continue
+
+                    if not x_column or not y_column:
+                        messagebox.showerror("Error", f"Row {idx + 1}: X or Y variable is missing.")
+                        continue
+
+                    if tab_name in wb.sheetnames:
+                        print(f"Row {idx + 1}: Sheet '{tab_name}' already exists.")
+                        sheet = wb[tab_name]
+                    else:
+                        print(f"Row {idx + 1}: Creating new sheet '{tab_name}'.")
+                        sheet = wb.create_sheet(tab_name)
+
+                    if x_column not in self.df.columns or y_column not in self.df.columns:
+                        raise ValueError(f"Row {idx + 1}: Column {x_column} or {y_column} not found in data.")
+
+                    self.df[x_column] = pd.to_numeric(self.df[x_column], errors="coerce")
+                    self.df[y_column] = pd.to_numeric(self.df[y_column], errors="coerce")
+                    filtered_df = self.df.dropna(subset=[x_column, y_column])
+
+                    print(f"Row {idx + 1}: Filtered data for X: {filtered_df[x_column].tolist()}")
+                    print(f"Row {idx + 1}: Filtered data for Y: {filtered_df[y_column].tolist()}")
+
+                    if filtered_df.empty:
+                        raise ValueError(f"Row {idx + 1}: No valid data found for X: {x_column} and Y: {y_column}.")
+
+                    x_data = filtered_df[x_column].tolist()
+                    y_data = filtered_df[y_column].tolist()
+
+                    if not x_data or not y_data:
+                        raise ValueError(f"Row {idx + 1}: X or Y data is empty after filtering.")
+
+                    start_row = 1  
+                    sheet.cell(row=start_row, column=1, value=f"{x_column} vs {y_column}")
+                    sheet.cell(row=start_row + 1, column=1, value=x_column)
+                    sheet.cell(row=start_row + 1, column=2, value=y_column)
+
+                    for i, (x, y) in enumerate(zip(x_data, y_data), start=start_row + 2):
+                        sheet.cell(row=i, column=1, value=x)
+                        sheet.cell(row=i, column=2, value=y)
+
+                    # Create scatter chart
+                    chart = ScatterChart()
+                    chart.title = map_name or f"{x_column} vs {y_column}"
+                    chart.x_axis.title = x_column
+                    chart.y_axis.title = y_column
+
+                    if not x_data or not y_data:
+                        raise ValueError(f"Row {idx + 1}: No valid data available for charting.")
+                    
+                    x_values = Reference(sheet, min_col=1, min_row=start_row + 2, max_row=start_row + 1 + len(x_data))
+                    y_values = Reference(sheet, min_col=2, min_row=start_row + 2, max_row=start_row + 1 + len(y_data))
+
+                    if x_values.min_row > x_values.max_row or y_values.min_row > y_values.max_row:
+                        raise ValueError(f"Row {idx + 1}: Invalid reference range for chart.")
+
+                    series = Series(y_values, x_values, title=f"{x_column} vs {y_column}")
+                    series.marker.symbol = "circle"
+                    series.graphicalProperties.line.noFill = True
+                    chart.series.append(series)
+
+                    # Insert the chart into the sheet
+                    chart_position = f"E{start_row}"  
+                    sheet.add_chart(chart, chart_position)
+
+                    print(f"Row {idx + 1}: Scatter plot created successfully on sheet '{tab_name}'.")
+
+                except Exception as inner_error:
+                    print(f"Row {idx + 1}: Error occurred - {str(inner_error)}")
+                    messagebox.showerror("Error", f"Row {idx + 1}: Failed to process due to {str(inner_error)}")
+
+            # Save the workbook
+            wb.save(file_path)
+            print(f"Scatter plots created successfully. Existing sheets after creating: {wb.sheetnames}")
+
+        except Exception as e:
+            print(f"Failed to plot scatter: {str(e)}")
+            messagebox.showerror("Error", f"Failed to plot scatter.\nError: {str(e)}")
+
+
+    def generate_multiple_plots(data):
+        
+        workbook = Workbook()
+        worksheet = workbook.active
+        worksheet.title = "Plots"
+
+        excel_row = 1
+
+        for i, row in enumerate(self.rows):  
+            x_variable = row["X Variable"].get()
+            y_variable = row["Y Variable"].get()
+            tab_name = row["Tabs"].get()
+
+            # Validate inputs
+            if not x_variable or not y_variable or not tab_name:
+                print(f"Row {i + 1} has missing data. Skipping.")
+                continue
+
+            filtered_data = data  
+
+            # Generate plot
+            plt.figure()
+            plt.scatter(filtered_data[x_variable], filtered_data[y_variable], label=None)  # No label for legend
+            plt.xlabel(x_variable)
+            plt.ylabel(y_variable)
+            plt.title(f"Plot {i + 1}: {x_variable} vs {y_variable}")
+            plot_filename = f"plot_row_{i + 1}.png"
+            plt.savefig(plot_filename)
+            plt.close()
+            img = Image(plot_filename)
+            img_cell = f"B{excel_row}"
+            worksheet.add_image(img, img_cell)
+
+            worksheet.cell(row=excel_row, column=1, value=f"Plot {i + 1}")
+            worksheet.cell(row=excel_row + 1, column=1, value=f"Tab: {tab_name}")
+            worksheet.cell(row=excel_row + 2, column=1, value=f"X: {x_variable}, Y: {y_variable}")
+
+            excel_row += 20  
+
+        output_filename = "generated_plots.xlsx"
+        workbook.save(output_filename)
+        print(f"All plots saved in {output_filename}")
+
+    def initialize_dropdowns(self):
+        options = list(self.df.columns)
+
+        # X Dropdown
+        if not hasattr(self, 'x_dropdown'):
+            self.x_var = tk.StringVar()
+            self.x_dropdown_visible = False
+            self.x_dropdown = tk.Frame(self.sub_frame, bd=1, relief="solid")
+            self.x_search = tk.Entry(self.x_dropdown, width=20)
+            self.x_search.pack(fill="x")
+            self.x_search.insert(0, "Search X...")
+            self.x_search.bind("<KeyRelease>", lambda event: self.filter_listbox(self.x_search, self.x_list, options))
+            self.x_list = tk.Listbox(self.x_dropdown, height=5, width=20)
+            self.x_list.pack(fill="both", expand=True)
+            for opt in options:
+                self.x_list.insert(tk.END, opt)
+            self.x_list.bind("<<ListboxSelect>>", self.on_x_select)
+            self.x_dropdown.grid(row=2, column=1, sticky="nsew", padx=2, pady=2)
+            self.x_dropdown.grid_remove()
+
+        # Y Dropdown
+        if not hasattr(self, 'y_dropdown'):
+            self.y_var = tk.StringVar()
+            self.y_dropdown_visible = False
+            self.y_dropdown = tk.Frame(self.sub_frame, bd=1, relief="solid")
+            self.y_search = tk.Entry(self.y_dropdown, width=20)
+            self.y_search.pack(fill="x")
+            self.y_search.insert(0, "Search Y...")
+            self.y_search.bind("<KeyRelease>", lambda event: self.filter_listbox(self.y_search, self.y_list, options))
+            self.y_list = tk.Listbox(self.y_dropdown, height=5, width=20)
+            self.y_list.pack(fill="both", expand=True)
+            for opt in options:
+                self.y_list.insert(tk.END, opt)
+            self.y_list.bind("<<ListboxSelect>>", self.on_y_select)
+            self.y_dropdown.grid(row=2, column=3, sticky="nsew", padx=2, pady=2)
+            self.y_dropdown.grid_remove()
+
+
+    def filter_listbox(self, search_entry, listbox, options):
+        search_text = search_entry.get().lower()
+        listbox.delete(0, tk.END)
+        for opt in options:
+            if search_text in opt.lower():
+                listbox.insert(tk.END, opt)
+
+
+    def on_x_select(self, event):
+        try:
+            index = self.x_list.curselection()[0]
+            value = self.x_list.get(index)
+            self.x_var.set(value)
+        except IndexError:
+            return
+        # Reset search entry for next time.
+        self.x_search.delete(0, tk.END)
+        self.x_search.insert(0, "Search X...")
+        self.x_dropdown.grid_remove()
+        self.x_dropdown_visible = False
+
+
+    def on_y_select(self, event):
+        try:
+            index = self.y_list.curselection()[0]
+            value = self.y_list.get(index)
+            self.y_var.set(value)
+        except IndexError:
+            return
+        self.y_search.delete(0, tk.END)
+        self.y_search.insert(0, "Search Y...")
+        self.y_dropdown.grid_remove()
+        self.y_dropdown_visible = False
+
+
+    def show_x_dropdown(self):
+        if not hasattr(self, 'x_dropdown'):
+            self.initialize_dropdowns()  
+
+        if self.x_dropdown_visible:
+            self.x_dropdown.grid_remove()
+            self.x_dropdown_visible = False
+        else:
+            self.x_dropdown.grid()
+            self.x_dropdown_visible = True
+
+
+    def show_y_dropdown(self):
+        if not hasattr(self, 'y_dropdown'):
+            self.initialize_dropdowns()  # Ensure dropdowns are initialized
+
+        if self.y_dropdown_visible:
+            self.y_dropdown.grid_remove()
+            self.y_dropdown_visible = False
+        else:
+            self.y_dropdown.grid()
+            self.y_dropdown_visible = True
+
+
+
+
+
+    def update_axis_view(self):
+        if self.axis_var.get() == "3 Axis":
+            self.z_button.grid(row=1, column=9, sticky="nsew", padx=2, pady=2)
+            self.z_dropdown.grid(row=2, column=7, sticky="nsew", padx=2, pady=2)
+            self.z_range_button.grid(row=1, column=8, sticky="nsew", padx=2, pady=2)
+        else:
+            self.z_button.grid_forget()
+            self.z_dropdown.grid_forget()
+            self.z_range_button.grid_forget()
+
+    import os
+    import pandas as pd
+    import xlsxwriter
+    from openpyxl import load_workbook
+    from tkinter import messagebox, Tk
+
+
+    def generate_scatter_plot(file_path, x_data, y_data, x_label, y_label, chart_title, sheet_name="Sheet1"):
+        try:
+            workbook = xlsxwriter.Workbook(file_path)
+            worksheet = workbook.add_worksheet(sheet_name)
+
+            headings = ['X Values', 'Y Values']
+            data = [x_data, y_data]
+
+            worksheet.write_row('A1', headings)
+            worksheet.write_column('A2', data[0]) 
+            worksheet.write_column('B2', data[1])  
+            scatter_chart = workbook.add_chart({'type': 'scatter'})
+            scatter_chart.add_series({
+                'categories': f'={sheet_name}!$A$2:$A${len(x_data) + 1}',
+                'values': f'={sheet_name}!$B$2:$B${len(y_data) + 1}',
+                'name': '',  
+                'marker': {'type': 'circle', 'size': 6},  # Ensure points are visible
+            })
+
+            # Add chart title and axis labels
+            scatter_chart.set_title({'name': chart_title})
+            scatter_chart.set_x_axis({
+                'name': x_label,
+                'line': {'color': 'black'},
+                'major_tick_mark': 'outside',
+                'minor_tick_mark': 'none',
+                'num_format': 'General',  
+            })
+            scatter_chart.set_y_axis({
+                'name': y_label,
+                'line': {'color': 'black'},
+                'major_tick_mark': 'outside',
+                'minor_tick_mark': 'none',
+                'num_format': 'General',
+            })
+            scatter_chart.set_legend({'position': 'none'})
+
+            worksheet.insert_chart('D2', scatter_chart)
+
+            workbook.close()
+            print(f"Scatter plot saved to '{file_path}' successfully.")
+        except Exception as e:
+            print(f"Failed to generate scatter plot. Error: {e}")
+
+          
+    def plot_scatter(self):
+        import os, math, json, tempfile, shutil, sys
+        import pandas as pd
+        from tkinter import messagebox
+        import xlwings as xw
+
+        config_file = "chart_config.json"
+        if os.path.exists(config_file):
+            with open(config_file, "r") as f:
+                saved_charts = json.load(f)
+        else:
+            saved_charts = {}
+
+        if not hasattr(self, 'excel_file_path') or not self.excel_file_path:
+            messagebox.showerror("Error", "No Excel file is loaded. Please upload a file first.")
+            return
+        file_path = os.path.abspath(self.excel_file_path)
+
+        app = None
+        wb = None
+
+        charts_count = {}
+
+        try:
+            app = xw.App(visible=False)
+            app.screen_updating = False
+            app.display_alerts = False
+            app.calculation = 'manual'
+            
+            wb = app.books.open(file_path)
+            
+            try:
+                data_sheet = wb.sheets["data"]
+            except Exception:
+                data_sheet = wb.sheets.add("data")
+            data_sheet.api.Move(Before=wb.sheets[0].api)
+            
+            header_val = data_sheet.range("A1").value
+            if header_val is None:
+                data_sheet.range("A1").value = self.df
+            else:
+                used_rng = data_sheet.used_range
+                last_row = used_rng.last_cell.row
+                if last_row > 1:
+                    data_sheet.range(f"A2:Z{last_row}").clear_contents()
+                data_sheet.range("A2").value = self.df.values.tolist()
+
+            tolerances_updates = {}
+            model_names = [
+                "Rail pr pre controller",
+                "Rail pr set point controller",
+                "Intake Temperature",
+                "Back Pr _Before Turbo _ P3",
+                "Back Pr _After Turbo _ P4",
+                "Back Pr _Before cat_ P5",
+                "Back Pr _After cat_ P6",
+                "Exh Temp _ Before Turbo_T3",
+                "Exh Temp _ After Turbo_T4",
+                "Exh Temp _ Before Turbo_T5",
+                "Exh Temp _ Mid Cat_T6",
+                "Exh Temp _ After Cat_T7",
+                "Aircharge _ HFM",
+                "Aircharge _ Pbased",
+                "Aircharge _ Throttle",
+                "Mixture Control",
+                "Fuel Path",
+                "Torque Model"
+            ]
+
+            for idx, row in enumerate(self.entries):
+                tab_name = row["Tabs"].get().strip() 
+                x_column = row["X Variable"].get()
+                y_column = row["Y Variable"].get()
+                map_name = row["Map Name Entry"].get().strip() or f"{x_column} vs {y_column}"
+                selected_model = row["Model"].get().strip()
+                if not selected_model or selected_model == "Select Model":
+                    messagebox.showerror("Error", f"Row {idx+1}: Please select a valid model name.")
+                    continue
+                if selected_model not in model_names:
+                    messagebox.showerror("Error", f"Row {idx+1}: Selected model '{selected_model}' is not recognized.")
+                    continue
+                if not tab_name or tab_name == "Enter tab name":
+                    messagebox.showerror("Error", f"Row {idx+1}: Please enter a valid tab name.")
+                    continue
+
+                to_min_str = row["Tolerance Min Input"].get().strip()
+                to_max_str = row["Tolerance Max Input"].get().strip()
+                to_min = int(to_min_str) if to_min_str.isdigit() else None
+                to_max = int(to_max_str) if to_max_str.isdigit() else None
+
+                self.df[x_column] = pd.to_numeric(self.df[x_column], errors="coerce")
+                self.df[y_column] = pd.to_numeric(self.df[y_column], errors="coerce")
+                filtered_df = self.df.dropna(subset=[x_column, y_column])
+                if filtered_df.empty:
+                    messagebox.showwarning("Warning", f"Row {idx+1}: No valid data points available for '{x_column}' and '{y_column}'.")
+                    continue
+
+                total_points = len(filtered_df)
+                if to_min is not None and to_max is not None:
+                    within_tol = filtered_df[(filtered_df[y_column] >= to_min) & (filtered_df[y_column] <= to_max)]
+                    kpi_percentage = (len(within_tol) / total_points) * 100 if total_points > 0 else 0
+                else:
+                    kpi_percentage = 0
+
+                target_data = filtered_df[filtered_df["BlockID"] == "Target VVT"]
+                target_within = target_data[(target_data[y_column] >= to_min) & (target_data[y_column] <= to_max)]
+                kpi_target = (len(target_within) / len(target_data)) * 100 if len(target_data) > 0 else 0
+
+                reference_data = filtered_df[filtered_df["BlockID"] == "Reference VVT"]
+                reference_within = reference_data[(reference_data[y_column] >= to_min) & (reference_data[y_column] <= to_max)]
+                kpi_reference = (len(reference_within) / len(reference_data)) * 100 if len(reference_data) > 0 else 0
+
+                if selected_model not in tolerances_updates:
+                    if hasattr(self, 'block_data') and any(self.block_data.values()):
+                        tolerances_updates[selected_model] = {
+                            "Map Name": map_name,
+                            "Tolerance Min": to_min,
+                            "Tolerance Max": to_max,
+                            "KPI achieved": "",
+                            "KPI BlockID1 (Target VVT)": f"{kpi_target:.2f}%",
+                            "KPI BlockID2 (Reference VVT)": f"{kpi_reference:.2f}%"
+                        }
+                    else:
+                        tolerances_updates[selected_model] = {
+                            "Map Name": map_name,
+                            "Tolerance Min": to_min,
+                            "Tolerance Max": to_max,
+                            "KPI achieved": f"{kpi_percentage:.2f}%",
+                            "KPI BlockID1 (Target VVT)": "",
+                            "KPI BlockID2 (Reference VVT)": ""
+                        }
+
+                block_enabled = hasattr(self, 'block_data') and self.block_data.get("selected_column")
+
+                try:
+                    chart_sheet = wb.sheets[tab_name]
+                    chart_sheet.clear()
+                except Exception:
+                    chart_sheet = wb.sheets.add(tab_name)
+
+                chart_sheet.range("A1").value = [x_column, y_column]
+                x_data = filtered_df[x_column].tolist()
+                y_data = filtered_df[y_column].tolist()
+                chart_sheet.range("A2").options(transpose=True).value = x_data
+                chart_sheet.range("B2").options(transpose=True).value = y_data
+                last_row = len(x_data) + 1
+                chart_sheet.range(f"A1:B{last_row}").api.Font.Color = 16777215
+
+                x_min_val = min(x_data)
+                x_max_val = max(x_data)
+                y_min_val = min(y_data)
+                y_max_val = max(y_data)
+                x_min_user = row["X Range Min Input"].get().strip()
+                x_max_user = row["X Range Max Input"].get().strip()
+                if x_min_user and x_min_user != "Min":
+                    try:
+                        x_min_val = float(x_min_user)
+                    except ValueError:
+                        print(f"Invalid X min value: {x_min_user}")
+                if x_max_user and x_max_user != "Max":
+                    try:
+                        x_max_val = float(x_max_user)
+                    except ValueError:
+                        print(f"Invalid X max value: {x_max_user}")
+                y_min_user = row["Y Range Min Input"].get().strip()
+                y_max_user = row["Y Range Max Input"].get().strip()
+                if y_min_user and y_min_user != "Min":
+                    try:
+                        y_min_val = float(y_min_user)
+                    except ValueError:
+                        print(f"Invalid Y min value: {y_min_user}")
+                if y_max_user and y_max_user != "Max":
+                    try:
+                        y_max_val = float(y_max_user)
+                    except ValueError:
+                        print(f"Invalid Y max value: {y_max_user}")
+
+                chart = chart_sheet.charts.add()
+                chart.chart_type = 'xy_scatter'
+                source_range = chart_sheet.range(f"A1:B{last_row}")
+                chart.set_source_data(source_range)
+                chart.api[1].HasTitle = True
+                chart.api[1].ChartTitle.Text = map_name
+                chart.api[1].HasLegend = False
+
+                chart.api[1].ChartTitle.Format.TextFrame2.TextRange.Font.Name = "Calibri"
+                chart.api[1].ChartTitle.Format.TextFrame2.TextRange.Font.Size = 11
+                chart.api[1].ChartTitle.Format.TextFrame2.TextRange.Font.Bold = True
+
+                chart.api[1].Axes(1).HasTitle = True
+                chart.api[1].Axes(1).AxisTitle.Text = x_column
+                chart.api[1].Axes(2).HasTitle = True
+                chart.api[1].Axes(2).AxisTitle.Text = y_column
+                chart.api[1].Axes(1).MinimumScale = x_min_val
+                chart.api[1].Axes(1).MaximumScale = x_max_val
+                chart.api[1].Axes(2).MinimumScale = y_min_val
+                chart.api[1].Axes(2).MaximumScale = y_max_val
+
+                chart.api[1].Axes(1).HasMajorGridlines = True
+                chart.api[1].Axes(1).MajorGridlines.Format.Line.Visible = True
+                chart.api[1].Axes(1).MajorGridlines.Format.Line.ForeColor.RGB = 0x919191
+                chart.api[1].Axes(1).MajorGridlines.Format.Line.Weight = 0.5  
+
+                chart.api[1].Axes(2).HasMajorGridlines = True
+                chart.api[1].Axes(2).MajorGridlines.Format.Line.Visible = True
+                chart.api[1].Axes(2).MajorGridlines.Format.Line.ForeColor.RGB = 0x919191
+                chart.api[1].Axes(2).MajorGridlines.Format.Line.Weight = 0.5 
+
+
+                if tab_name not in charts_count:
+                    charts_count[tab_name] = 0
+                col_offset = charts_count[tab_name] * 9
+                start_cell = chart_sheet.range("A1").offset(0, col_offset)
+                chart.left = start_cell.left
+                chart.top = start_cell.top
+                charts_count[tab_name] += 1
+
+                chart.width = 5.7 * 72   # 5.2 inches in point
+                chart.height = 3.5 * 72  # 3.5 inches in point
+
+                chart.api[1].ChartArea.Format.Fill.Solid()
+                chart.api[1].ChartArea.Format.Fill.ForeColor.RGB = 0xFFFFFF
+                chart.api[1].PlotArea.Format.Fill.Solid()
+                chart.api[1].PlotArea.Format.Fill.ForeColor.RGB = 0xF4EDE9
+
+                main_series = chart.api[1].SeriesCollection(1)
+                main_series.MarkerStyle = 8  
+                main_series.MarkerSize = 5
+                main_series.MarkerBackgroundColor = 0x602000
+                main_series.MarkerForegroundColor = 0x602000
+                main_series.Format.Line.Visible = False
+
+                if block_enabled:
+                    block_colors = {
+                        "BlockID 1": 0x002060,
+                        "BlockID 2": 0xA80163,
+                        "BlockID 3": 0x008000
+                    }
+                    
+                    selected_column = self.block_data["selected_column"]
+                    
+                    for block_key in ["BlockID 1", "BlockID 2", "BlockID 3"]:
+                        block_value = self.block_data.get(block_key, "").strip()
+                        if not block_value:
+                            continue  
+                        
+                        subset = filtered_df[filtered_df[selected_column] == block_value]
+                        if subset.empty:
+                            continue
+                        
+                        chart_sheet.range("D1").value = [x_column, y_column]
+                        x_sub = subset[x_column].tolist()
+                        y_sub = subset[y_column].tolist()
+                        chart_sheet.range("D2").options(transpose=True).value = x_sub
+                        chart_sheet.range("E2").options(transpose=True).value = y_sub
+                        sub_last_row = len(x_sub) + 1
+                        chart_sheet.range(f"D1:E{sub_last_row}").api.Font.Color = 16777215
+                        
+                        chart.api[1].SeriesCollection().NewSeries()
+                        series = chart.api[1].SeriesCollection(chart.api[1].SeriesCollection().Count)
+                        series.XValues = chart_sheet.range(f"D2:D{sub_last_row}").api
+                        series.Values = chart_sheet.range(f"E2:E{sub_last_row}").api
+                        series.Name = block_value
+                        
+                        series.MarkerStyle = 8  
+                        series.MarkerSize = 5
+                        color = block_colors.get(block_key, 0x000000)  
+                        series.MarkerBackgroundColor = color
+                        series.MarkerForegroundColor = color
+                        series.Format.Line.Visible = False
+
+
+                if to_min is not None or to_max is not None:
+                    extended_x_min = x_min_val - (x_max_val - x_min_val) * 0.1
+                    extended_x_max = x_max_val + (x_max_val - x_min_val) * 0.1
+
+                    if to_min is not None:
+                        try:
+                            red_series_min = chart.api[1].SeriesCollection().NewSeries()
+                            red_series_min.XValues = (extended_x_min, extended_x_max)
+                            red_series_min.Values = (to_min, to_min)
+                            red_series_min.Format.Line.Visible = True
+                            red_series_min.Format.Line.ForeColor.RGB = 0x0000FF
+                            red_series_min.Format.Line.Weight = 1.5
+                            red_series_min.Format.Line.DashStyle = 2
+                        except Exception as e:
+                            print("Error adding tolerance min red line:", e)
+
+                    if to_max is not None:
+                        try:
+                            red_series_max = chart.api[1].SeriesCollection().NewSeries()
+                            red_series_max.XValues = (extended_x_min, extended_x_max)
+                            red_series_max.Values = (to_max, to_max)
+                            red_series_max.Format.Line.Visible = True
+                            red_series_max.Format.Line.ForeColor.RGB = 0x0000FF
+                            red_series_max.Format.Line.Weight = 1.5
+                            red_series_max.Format.Line.DashStyle = 2
+                        except Exception as e:
+                            print("Error adding tolerance max red line:", e)
+
+                tol_sheet_name = "Tolerances"
+                try:
+                    tol_sheet = wb.sheets[tol_sheet_name]
+                except Exception:
+                    tol_sheet = wb.sheets.add(tol_sheet_name)
+
+                header_list = ["Model Name", "Map Name", "Tolerance Min", "Tolerance Max",
+                            "KPI achieved", "KPI BlockID1 (Target VVT)", "KPI BlockID2 (Reference VVT)"]
+                model_names_fixed = [
+                    "Rail pr pre controller",
+                    "Rail pr set point controller",
+                    "Intake Temperature",
+                    "Back Pr _Before Turbo _ P3",
+                    "Back Pr _After Turbo _ P4",
+                    "Back Pr _Before cat_ P5",
+                    "Back Pr _After cat_ P6",
+                    "Exh Temp _ Before Turbo_T3",
+                    "Exh Temp _ After Turbo_T4",
+                    "Exh Temp _ Before Turbo_T5",
+                    "Exh Temp _ Mid Cat_T6",
+                    "Exh Temp _ After Cat_T7",
+                    "Aircharge _ HFM",
+                    "Aircharge _ Pbased",
+                    "Aircharge _ Throttle",
+                    "Mixture Control",
+                    "Fuel Path",
+                    "Torque Model"
+                ]
+
+                try:
+                    existing_range = tol_sheet.range("A1").expand()
+                    existing_data = existing_range.value
+                except Exception:
+                    existing_data = None
+                if existing_data is None or (isinstance(existing_data, list) and len(existing_data) < 2):
+                    df_tol = pd.DataFrame({"Model Name": model_names_fixed})
+                    for col in header_list[1:]:
+                        df_tol[col] = ""
+                else:
+                    if isinstance(existing_data[0], list):
+                        df_tol = pd.DataFrame(existing_data[1:], columns=existing_data[0])
+                    else:
+                        df_tol = pd.DataFrame([existing_data], columns=header_list)
+                    df_models = pd.DataFrame({"Model Name": model_names_fixed})
+                    df_tol = pd.merge(df_models, df_tol, on="Model Name", how="left")
+                    for col in header_list[1:]:
+                        if col not in df_tol.columns:
+                            df_tol[col] = ""
+                    df_tol = df_tol.astype(object)
+                    df_tol.fillna("", inplace=True)
+
+                for model, update in tolerances_updates.items():
+                    idxs = df_tol.index[df_tol["Model Name"] == model]
+                    if not idxs.empty:
+                        i = idxs[0]
+                        df_tol.at[i, "Map Name"] = update["Map Name"]
+                        df_tol.at[i, "Tolerance Min"] = update["Tolerance Min"]
+                        df_tol.at[i, "Tolerance Max"] = update["Tolerance Max"]
+                        kpi_val = update["KPI achieved"]
+                        if kpi_val is None or (isinstance(kpi_val, float) and math.isnan(kpi_val)):
+                            kpi_val = ""
+                        else:
+                            kpi_val = str(kpi_val)
+                        df_tol.at[i, "KPI achieved"] = kpi_val
+                        df_tol.at[i, "KPI BlockID1 (Target VVT)"] = update["KPI BlockID1 (Target VVT)"]
+                        df_tol.at[i, "KPI BlockID2 (Reference VVT)"] = update["KPI BlockID2 (Reference VVT)"]
+
+                df_tol["Order"] = df_tol["Model Name"].apply(lambda x: model_names_fixed.index(x) if x in model_names_fixed else 999)
+                df_tol = df_tol.sort_values("Order").drop(columns="Order")
+                df_tol = df_tol[header_list]
+                tol_sheet.range("A1").options(index=False, header=True).value = df_tol
+
+                data_range = tol_sheet.range("A1").expand()
+                try:
+                    table = tol_sheet.api.ListObjects("TolerancesTable")
+                    table.Delete()
+                except Exception:
+                    pass
+                table = tol_sheet.api.ListObjects.Add(SourceType=1, Source=data_range.api, XlListObjectHasHeaders=1)
+                table.Name = "TolerancesTable"
+                table.TableStyle = "TableStyleMedium2"
+                header_range = tol_sheet.range("A1:G1")
+                header_range.api.Font.Name = "Calibri"
+                header_range.api.Font.Size = 11
+                header_range.api.Font.Bold = True
+                header_range.api.HorizontalAlignment = -4108  
+                tol_sheet.range("A1").row_height = 32.40
+                tol_sheet.range("A:A").column_width = 30
+                tol_sheet.range("B:B").column_width = 30
+                tol_sheet.range("C:C").column_width = 20
+                tol_sheet.range("D:D").column_width = 20
+                tol_sheet.range("E:E").column_width = 20
+                tol_sheet.range("F:F").column_width = 24
+                tol_sheet.range("G:G").column_width = 25
+
+                last_data_row = tol_sheet.range("A1").expand().last_cell.row
+                kpi_range = tol_sheet.range(f"E2:E{last_data_row}")
+                for cell in kpi_range:
+                    val = cell.value
+                    if val is None or (isinstance(val, str) and val.strip() == ""):
+                        cell.value = ""
+                        cell.api.Interior.ColorIndex = 0
+                        continue
+                    try:
+                        if isinstance(val, str):
+                            numeric_val = float(val.replace('%', '').strip()) / 100
+                        elif isinstance(val, (int, float)):
+                            numeric_val = val / 100 if val > 1 else val
+                        else:
+                            numeric_val = 0
+                        if numeric_val >= 0.95:
+                            cell.api.Interior.Color = 0x4FBD31  
+                        else:
+                            cell.api.Interior.Color = 0x2CF8E0  
+                    except Exception as e:
+                        print("Error formatting KPI achieved cell", cell.address, e)
+                        cell.value = ""
+                        cell.api.Interior.ColorIndex = 0
+
+            data_sheet = wb.sheets["data"]
+            data_sheet.api.Move(Before=wb.sheets[0].api)
+
+
+            wb.save()
+            messagebox.showinfo("Success", "Plot generated successfully!")
+
+            with open(config_file, "w") as f:
+                json.dump(saved_charts, f)
+
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to plot scatter.\nError: {str(e)}")
+        finally:
+            try:
+                if wb:
+                    wb.close()
+            except Exception:
+                pass
+            if app:
+                app.quit()
+
+
+if __name__ == "__main__":
+
+    root = Tk()
+    obj = Bosch(root)
+    root.mainloop()
